@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Post-installation shell script for Debian package
+
+BINDIR=/usr/local/syna/bin
+SCRIPT=$BINDIR/streamer_router.sh
+
+sudo chmod 755 $SCRIPT
+
+SYSTEMD=/etc/systemd/system
+SERVICE=streamer_router.service
+
+# Start and enable service
+sudo ln -sf /lib/systemd/system/streamer_router.service $SYSTEMD/$SERVICE
+sudo systemctl start $SERVICE
+sudo systemctl enable $SERVICE

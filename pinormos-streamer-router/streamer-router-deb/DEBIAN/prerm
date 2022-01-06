@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Pre-removal shell script for Debian package
+
+SYSTEMD=/etc/systemd/system
+SERVICE=streamer_router.service
+
+# Stop and disable service
+if [ -f $SYSTEMD/$SERVICE ]; then
+  systemctl is-active $SERVICE > /dev/null 2>&1 && sudo systemctl stop $SERVICE
+  sudo systemctl disable $SERVICE
+  sudo rm -fr $SYSTEMD/$SERVICE
+fi

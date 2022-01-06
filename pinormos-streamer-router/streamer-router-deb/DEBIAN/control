@@ -1,0 +1,8 @@
+Package: streamer-router
+Version: 1.0.2-1
+Architecture: armhf
+Depends: ncat, android-tools-adb
+Section: custom
+Priority: optional
+Description: Service for routing connection between local development board and remote Android device
+Maintainer: Synaptics

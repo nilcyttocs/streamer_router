@@ -1,0 +1,12 @@
+[Unit]
+Description=Streamer Router
+After=multi-user.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/local/syna/bin/streamer_router.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
