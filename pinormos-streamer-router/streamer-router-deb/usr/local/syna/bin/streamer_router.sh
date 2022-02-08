@@ -1,6 +1,6 @@
 #!/bin/bash
 
-targetVersion='3.2.0'
+targetVersion='3.4.0'
 
 sourcePath=/usr/local/syna/bin/android/report_streamer
 
