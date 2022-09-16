@@ -13,5 +13,3 @@ if [ -f $SYSTEMD/$SERVICE ]; then
   sudo systemctl disable $SERVICE
   sudo rm -fr $SYSTEMD/$SERVICE
 fi
-
-sudo rm -fr $BINDIR
