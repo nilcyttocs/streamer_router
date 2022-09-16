@@ -1,6 +1,6 @@
 [Unit]
 Description=Streamer Router
-After=multi-user.target update_daemon.service
+After=multi-user.target
 
 [Service]
 Type=simple
