@@ -9,9 +9,10 @@ sudo chmod 755 $SCRIPT
 sudo chown root:root $SCRIPT
 
 SYSTEMD=/etc/systemd/system
-SERVICE=streamer_router.service
+SERVICE=pinormos-streamer-router.service
 
 # Start and enable service
-sudo ln -sf /lib/systemd/system/streamer_router.service $SYSTEMD/$SERVICE
+sudo ln -sf /lib/systemd/system/$SERVICE $SYSTEMD/$SERVICE
+sudo systemctl daemon-reload
 sudo systemctl start $SERVICE
 sudo systemctl enable $SERVICE

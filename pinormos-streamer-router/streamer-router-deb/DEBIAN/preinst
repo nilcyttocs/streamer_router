@@ -2,10 +2,8 @@
 
 # Pre-installation shell script for Debian package
 
-BINDIR=/usr/local/syna/bin/android/report_streamer
-
 SYSTEMD=/etc/systemd/system
-SERVICE=streamer_router.service
+SERVICE=pinormos-streamer-router.service
 
 # Stop and disable service
 if [ -f $SYSTEMD/$SERVICE ]; then
