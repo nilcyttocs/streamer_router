@@ -12,6 +12,8 @@ suParam='-c'
 
 connection=-1
 
+reportStreamerService=pinormos-report-streamer.service
+
 function compareVersions () {
     if [[ $1 == $2 ]]; then
         return 0
@@ -91,7 +93,7 @@ function checkConnection {
     if adb get-state 1>/dev/null 2>&1; then
         if [ $connection -eq -1 ] || [ $connection -eq 0 ]; then
         killProcess ncat
-        systemctl is-active report_streamer > /dev/null 2>&1 && sudo systemctl stop report_streamer
+        systemctl is-active $reportStreamerService > /dev/null 2>&1 && sudo systemctl stop $reportStreamerService
         ncat -k -l -p 1729 -c "ncat 127.0.0.1 1730" &
         adb forward tcp:1730 tcp:1729
         runReportStreamer
@@ -105,8 +107,8 @@ function checkConnection {
         if [ $connection -eq -1 ] || [ $connection -eq 1 ]; then
         sudo rm -fr $marker
         killProcess ncat
-        systemctl is-active report_streamer > /dev/null 2>&1 && sudo systemctl stop report_streamer
-        sudo systemctl start report_streamer.service
+        systemctl is-active $reportStreamerService > /dev/null 2>&1 && sudo systemctl stop $reportStreamerService
+        sudo systemctl start $reportStreamerService
         connection=0
         echo "connected to local development board"
         fi
