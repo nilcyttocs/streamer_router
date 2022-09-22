@@ -1,5 +1,5 @@
 Package: streamer-router
-Version: 1.0.4-5
+Version: 1.0.5-1
 Architecture: armhf
 Depends: ncat, android-tools-adb
 Section: custom
