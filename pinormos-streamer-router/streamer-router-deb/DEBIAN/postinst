@@ -11,6 +11,8 @@ sudo chown root:root $SCRIPT
 SYSTEMD=/etc/systemd/system
 SERVICE=pinormos-streamer-router.service
 
+sudo chown root:root /lib/systemd/system/$SERVICE
+
 # Start and enable service
 sudo ln -sf /lib/systemd/system/$SERVICE $SYSTEMD/$SERVICE
 sudo systemctl daemon-reload
